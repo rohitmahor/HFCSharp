@@ -1,0 +1,15 @@
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\bin\Debug\SaveTheHuman.exe.config
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\bin\Debug\SaveTheHuman.exe
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\bin\Debug\SaveTheHuman.pdb
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\Main\MainPage.g.cs
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\App.g.cs
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman_MarkupCompile.cache
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman_MarkupCompile.lref
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\Main\MainPage.baml
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman.g.resources
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman.Properties.Resources.resources
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman.csproj.GenerateResource.cache
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman.csproj.CoreCompileInputs.cache
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman.exe
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman.pdb
+D:\HFCSharp\SaveTheHuman\SaveTheHuman\obj\Debug\SaveTheHuman.csprojAssemblyReference.cache

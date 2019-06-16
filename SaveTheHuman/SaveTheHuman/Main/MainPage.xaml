@@ -9,8 +9,8 @@
       Title="Save The Humans" Width="525" Height="350">
     <Page.Resources>
         <ControlTemplate x:Key="EnemyTemplate" TargetType="{x:Type ContentControl}">
-            <Grid Margin="0,0,0,-60.2">
-                <Ellipse Fill="#FFF92B09" HorizontalAlignment="Center" Height="100" Stroke="Black" VerticalAlignment="Center" Width="100" Margin="0"/>
+            <Grid>
+                <Ellipse Fill="#FFF92B09" HorizontalAlignment="Center" Height="75" Stroke="Black" VerticalAlignment="Center" Width="75" Margin="0"/>
             </Grid>
         </ControlTemplate>
     </Page.Resources>
@@ -57,8 +57,8 @@
             </Rectangle>
         </Canvas>
         <StackPanel Grid.Column="2" Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="avoidThese" TextWrapping="Wrap" Height="35" Text="Avoid These" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-            <ContentControl Content="ContentControl" Template="{DynamicResource EnemyTemplate}" Height="115" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="avoidThese" TextWrapping="Wrap" Height="20" Text="Avoid These" FontSize="18" TextAlignment="Center" Foreground="White"/>
+            <ContentControl Content="" Template="{DynamicResource EnemyTemplate}" Height="121" ScrollViewer.HorizontalScrollBarVisibility="Visible" Width="159" HorizontalContentAlignment="Center"/>
         </StackPanel>
 
     </Grid>
