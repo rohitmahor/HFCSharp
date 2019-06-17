@@ -27,6 +27,8 @@ namespace SaveTheHuman1
         DispatcherTimer targetTimer = new DispatcherTimer();
         bool humanCaptured = false;
 
+        int win = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -132,6 +134,9 @@ namespace SaveTheHuman1
         {
             if (targetTimer.IsEnabled && humanCaptured)
             {
+                win++;
+                score.Text = win.ToString();
+
                 progressBar.Value = 0;
                 Canvas.SetLeft(target, random.Next(100, (int)playArea.ActualWidth - 100));
                 Canvas.SetTop(target, random.Next(100, (int)playArea.ActualHeight - 100));
