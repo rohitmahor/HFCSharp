@@ -1,0 +1,52 @@
+﻿<Window x:Class="PhotoAlbum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhotoAlbum"
+        xmlns:converter="clr-namespace;PhotoAlbum.Converter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="DataTemplate">
+            <ListViewItem Width="Auto" Height="Auto">
+                <Image x:Name="Image_GridViewColumnName" Width="100" Height="100" Source="{Binding path}" />
+            </ListViewItem>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="currentImage" Grid.Column="1"/>
+
+        <Button x:Name="next" Grid.Column="1" BorderBrush="Transparent" Background="Transparent" VerticalAlignment="Center" Margin="603,149,0,149" Click="Next_Click" HorizontalAlignment="Right">
+            <Button.ToolTip>
+                Next
+            </Button.ToolTip>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="50" Text="&gt;" FontWeight="Bold" Foreground="White"/>
+        </Button>
+
+        <Button x:Name="prev" Grid.Column="1" BorderBrush="Transparent" Background="Transparent" VerticalAlignment="Center" Click="Prev_Click" Margin="0,150,603,151" HorizontalAlignment="Left">
+            <Button.ToolTip>
+                Previous
+            </Button.ToolTip>
+            <TextBlock x:Name="previous" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="50" Text="&lt;" FontWeight="Bold" Foreground="White" Height="64"/>
+        </Button>
+
+        <Button x:Name="add" Content="ADD" Background="White" FontSize="20" FontWeight="Bold" Click="Add_Click" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="50" Margin="198,5,369,5" Width="75" Grid.Row="1"/>
+
+        <Button x:Name="DeleteButton" Content="DELETE"  Background="White" FontSize="20" FontWeight="Bold" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="DeleteButton_Click"  Height="50" Margin="342,5,220,5" Width="80"  ></Button>
+
+        <ListView x:Name="ThumbnailList" ItemTemplate="{DynamicResource DataTemplate}" SelectionChanged="ThumbnailList_SelectionChanged" Background="Black" Margin="0,0,0,5" Grid.RowSpan="2" BorderBrush="Black"></ListView>
+
+
+    </Grid>
+</Window>

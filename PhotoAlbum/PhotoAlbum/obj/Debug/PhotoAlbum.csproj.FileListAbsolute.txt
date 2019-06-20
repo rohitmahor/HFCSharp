@@ -1,0 +1,15 @@
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\bin\Debug\PhotoAlbum.exe.config
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\bin\Debug\PhotoAlbum.exe
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\bin\Debug\PhotoAlbum.pdb
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum.csprojAssemblyReference.cache
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\MainWindow.g.cs
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\App.g.cs
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum_MarkupCompile.cache
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum_MarkupCompile.lref
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\MainWindow.baml
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum.g.resources
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum.Properties.Resources.resources
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum.csproj.GenerateResource.cache
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum.csproj.CoreCompileInputs.cache
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum.exe
+C:\Users\Rohit.COMPRO\Desktop\HFCSharp\PhotoAlbum\PhotoAlbum\obj\Debug\PhotoAlbum.pdb
