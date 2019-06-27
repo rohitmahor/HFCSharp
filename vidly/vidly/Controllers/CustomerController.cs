@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using vidly.Models;
+using vidly.ViewModels;
 using System.Data.Entity;
 
 namespace vidly.Controllers
@@ -50,6 +51,66 @@ namespace vidly.Controllers
                 return HttpNotFound();
 
             return View(customer);
+        }
+
+        public ActionResult New()
+        {
+            IEnumerable<MembershipType> membershipType = _context.MembershipType.ToList();
+            NewCustomerViewModel viewModel = new NewCustomerViewModel
+            {
+                Customer = new Customer(),
+                MembershipTypes = membershipType
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateOrUpdate(Customer customer)
+        {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewCustomerViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipType.ToList()
+                };
+
+                return View("New", viewModel);        
+            }
+
+            if(customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+                customerInDb.Name = customer.Name;
+                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index","Customer");
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null || id == null)
+                return HttpNotFound();
+
+            var viewModel = new NewCustomerViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipType.ToList()
+            };
+
+            return View("New", viewModel);
         }
     }
 }

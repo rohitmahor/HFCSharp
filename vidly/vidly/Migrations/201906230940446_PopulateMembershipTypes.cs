@@ -15,6 +15,7 @@ namespace vidly.Migrations
         
         public override void Down()
         {
+            Sql("TRUNCATE TABLE MembershipTypes");
         }
     }
 }

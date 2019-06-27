@@ -4,14 +4,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
+<h2>
+    @Model.Name
+    @Html.ActionLink(" ", "Edit", "Customer", new { id = @Model.Id }, new { @class = "glyphicon glyphicon-pencil small btn btn-Info btn-sm"})
+</h2>
 
 <ul>
     <li>Membership Type: @Model.MembershipType.Name</li>
     @if (Model.BirthDate != null)
     {
-        <li>Date Of Birth: @Model.BirthDate.ToString().Substring(0,10)</li>
+        <li>Date Of Birth: @Model.BirthDate.Value.ToString("dd MMM yyyy")</li>
     }
 
 </ul>
-

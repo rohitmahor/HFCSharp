@@ -3,8 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Movies</h2>
+<button class="btn btn-primary" style="margin: 0 0 10px 0;" onclick="location.href='@Url.Action("New", "Movie")'">New Movie</button>
 
 @if (!Model.Any())
 {
@@ -18,16 +18,19 @@ else
                 <th>
                     Movies
                 </th>
+                <th>
+                    Genre
+                </th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var movie in Model)
+            @foreach (var movie in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(movie.Name, "Details", "Movie",new { id = movie.Id }, null)</td>
+                    <td>@Html.ActionLink(movie.Name, "Details", "Movie", new { id = movie.Id }, null)</td>
+                    <td>@movie.Genre</td>
                 </tr>
             }
         </tbody>
     </table>
 }
-

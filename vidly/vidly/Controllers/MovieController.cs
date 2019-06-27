@@ -10,6 +10,18 @@ namespace vidly.Controllers
 {
     public class MovieController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MovieController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Movie/Index
         public ViewResult Index(int? pageIndex, string sortBy)
         {
@@ -27,11 +39,7 @@ namespace vidly.Controllers
         //Return List of movies
         private IEnumerable<Movie> GetMovies()
         {
-            return new List<Movie>
-            {
-                new Movie{Name="Shrek", Id=1},
-                new Movie{Name="Wall-e", Id=2}
-            };
+            return _context.Movies.ToList();
         }
 
         //GET: Movie/Details
@@ -59,11 +67,50 @@ namespace vidly.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult New()
         {
-            return Content("id = " + id);
+            return View();
         }
 
+        public ActionResult Edit(int? id)
+        {
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+            if(movie == null || id == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View("New", movie);
+        }
+
+        public ActionResult CreateOrUpdate(Movie movie)
+        {
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            if(movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                if (movieInDb == null)
+                    return HttpNotFound();
+
+                movieInDb.Name = movie.Name;
+                movieInDb.Genre = movie.Genre;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.DateAdded = DateTime.Now;
+                movieInDb.NumStocks = movie.NumStocks;
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Movie");
+        }
 
         [Route("movie/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
         public ActionResult ByReleasedDate(int year, int month)

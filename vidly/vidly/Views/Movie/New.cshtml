@@ -1,0 +1,43 @@
+﻿@model vidly.Models.Movie
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Movie</h2>
+
+@using (Html.BeginForm("CreateOrUpdate", "Movie"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre)
+        @Html.DropDownListFor(m => m.Genre, new List<SelectListItem>
+{
+
+   new SelectListItem{ Text="Action", Value = "Action" },
+   new SelectListItem{ Text="Adventure", Value = "Adventure" },
+   new SelectListItem{ Text="Comedy", Value = "Comedy" },
+   new SelectListItem{ Text="Crime", Value = "Crime" },
+   new SelectListItem{ Text="Drama", Value = "Drama" },
+   new SelectListItem{ Text="Romance", Value = "Romance" },
+   new SelectListItem{ Text="Thriller", Value = "Thriller" },
+}, "Select Genre Type", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReleaseDate)
+        @Html.TextBoxFor(m => m.ReleaseDate, "{0: dd MMM yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumStocks)
+        @Html.TextBoxFor(m => m.NumStocks, new { @class = "form-control" , @type="Number"})
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}

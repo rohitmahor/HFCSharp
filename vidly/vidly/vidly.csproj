@@ -156,16 +156,30 @@
     <Compile Include="Migrations\201906231126365_AddOtherFourMovieProp.Designer.cs">
       <DependentUpon>201906231126365_AddOtherFourMovieProp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906231129433_populateMovie.cs" />
-    <Compile Include="Migrations\201906231129433_populateMovie.Designer.cs">
-      <DependentUpon>201906231129433_populateMovie.cs</DependentUpon>
+    <Compile Include="Migrations\201906240441377_PopulateCustomerData.cs" />
+    <Compile Include="Migrations\201906240441377_PopulateCustomerData.Designer.cs">
+      <DependentUpon>201906240441377_PopulateCustomerData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906240516261_UpdateMembershipTypeName.cs" />
+    <Compile Include="Migrations\201906240516261_UpdateMembershipTypeName.Designer.cs">
+      <DependentUpon>201906240516261_UpdateMembershipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906240545175_PopulateMovies.cs" />
+    <Compile Include="Migrations\201906240545175_PopulateMovies.Designer.cs">
+      <DependentUpon>201906240545175_PopulateMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906250546073_AddCheckOnNumStock.cs" />
+    <Compile Include="Migrations\201906250546073_AddCheckOnNumStock.Designer.cs">
+      <DependentUpon>201906250546073_AddCheckOnNumStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +225,8 @@
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\New.cshtml" />
+    <Content Include="Views\Movie\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,7 +240,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
@@ -247,8 +265,17 @@
     <EmbeddedResource Include="Migrations\201906231126365_AddOtherFourMovieProp.resx">
       <DependentUpon>201906231126365_AddOtherFourMovieProp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906231129433_populateMovie.resx">
-      <DependentUpon>201906231129433_populateMovie.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906240441377_PopulateCustomerData.resx">
+      <DependentUpon>201906240441377_PopulateCustomerData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906240516261_UpdateMembershipTypeName.resx">
+      <DependentUpon>201906240516261_UpdateMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906240545175_PopulateMovies.resx">
+      <DependentUpon>201906240545175_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250546073_AddCheckOnNumStock.resx">
+      <DependentUpon>201906250546073_AddCheckOnNumStock.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,6 +13,7 @@ namespace vidly.Migrations
         
         public override void Down()
         {
+            Sql("UPDATE Customers SET BirthDate = NULL");
         }
     }
 }
