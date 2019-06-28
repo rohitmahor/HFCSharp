@@ -69,7 +69,13 @@ namespace vidly.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var movie = new Movie
+            {
+                NumStocks = 0,
+                ReleaseDate = DateTime.Now,
+                DateAdded = DateTime.Now
+            };
+            return View(movie);
         }
 
         public ActionResult Edit(int? id)
@@ -83,8 +89,15 @@ namespace vidly.Controllers
             return View("New", movie);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateOrUpdate(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("New", movie);
+            }
+
             if (movie == null)
             {
                 return HttpNotFound();

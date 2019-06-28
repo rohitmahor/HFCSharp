@@ -11,21 +11,22 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Genre)
         @Html.DropDownListFor(m => m.Genre, new List<SelectListItem>
-{
-
-   new SelectListItem{ Text="Action", Value = "Action" },
-   new SelectListItem{ Text="Adventure", Value = "Adventure" },
-   new SelectListItem{ Text="Comedy", Value = "Comedy" },
-   new SelectListItem{ Text="Crime", Value = "Crime" },
-   new SelectListItem{ Text="Drama", Value = "Drama" },
-   new SelectListItem{ Text="Romance", Value = "Romance" },
-   new SelectListItem{ Text="Thriller", Value = "Thriller" },
-}, "Select Genre Type", new { @class = "form-control" })
+        {
+           new SelectListItem{ Text="Action", Value = "Action" },
+           new SelectListItem{ Text="Adventure", Value = "Adventure" },
+           new SelectListItem{ Text="Comedy", Value = "Comedy" },
+           new SelectListItem{ Text="Crime", Value = "Crime" },
+           new SelectListItem{ Text="Drama", Value = "Drama" },
+           new SelectListItem{ Text="Romance", Value = "Romance" },
+           new SelectListItem{ Text="Thriller", Value = "Thriller" },
+        }, "Select Genre Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Genre)
     </div>
 
     <div class="form-group">
@@ -36,8 +37,10 @@
     <div class="form-group">
         @Html.LabelFor(m => m.NumStocks)
         @Html.TextBoxFor(m => m.NumStocks, new { @class = "form-control" , @type="Number"})
+        @Html.ValidationMessageFor(m => m.NumStocks)
     </div>
 
     @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 }
